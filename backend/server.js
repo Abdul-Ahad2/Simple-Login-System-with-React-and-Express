@@ -2,8 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import router from "./routes/goalRoutes.js";
 import errorHandler from "./middlewares/errorHandling.js";
+import { connectDB } from "./config/connectDB.js";
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 
