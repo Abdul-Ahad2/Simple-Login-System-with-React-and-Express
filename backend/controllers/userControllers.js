@@ -54,7 +54,7 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const getUserData = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "Data Fetched" });
+  res.status(200).json(req.user);
 });
 
 const generateJWT = (id) => {
