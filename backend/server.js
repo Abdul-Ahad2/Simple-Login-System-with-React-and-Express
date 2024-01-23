@@ -4,6 +4,7 @@ import router from "./routes/goalRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import errorHandler from "./middlewares/errorHandling.js";
 import { connectDB } from "./config/connectDB.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
